@@ -1,5 +1,8 @@
 <?php
-include("client.php");
-$array = array("id"=>2);
-echo $client->getName($array);
+
+$client = new SoapClient("https://api.radioreference.com/soap2/?wsdl&v=latest");
+
+$countries = $client->getCountryList();
+
+var_dump($countries);
 ?>
